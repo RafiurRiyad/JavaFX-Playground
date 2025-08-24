@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo1.DashboardController"
+            prefWidth="600" prefHeight="400">
+
+    <!-- Top: Title -->
+    <top>
+        <Label text="Product Dashboard"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- Left: Product Form -->
+    <left>
+        <VBox spacing="10" alignment="CENTER_LEFT" prefWidth="200">
+            <padding>
+                <Insets top="15" right="10" bottom="15" left="10"/>
+            </padding>
+            <children>
+                <Label text="Add Product" style="-fx-font-size: 16px;"/>
+                <TextField fx:id="nameField" promptText="Product Name"/>
+                <TextField fx:id="priceField" promptText="Price"/>
+                <ComboBox fx:id="categoryBox" promptText="Select Category"/>
+                <Button text="Add Product" onAction="#addProduct"/>
+                <Label fx:id="formMessage" textFill="green"/>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Center: Product Table -->
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <HBox spacing="10">
+                    <Label text="Filter by Category:"/>
+                    <ComboBox fx:id="filterBox" promptText="All"/>
+                </HBox>
+                <TableView fx:id="productTable" prefHeight="300" prefWidth="350">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="120"/>
+                        <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                        <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
