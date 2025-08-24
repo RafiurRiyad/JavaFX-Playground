@@ -41,8 +41,8 @@ This project is a simple JavaFX desktop application that demonstrates a product 
 
 1. **Clone the repository** (if not already):
    ```sh
-   git clone <your-repo-url>
-   cd demo1
+   git clone https://github.com/RafiurRiyad/JavaFX-Playground.git
+   cd JavaFxPlayground
    ```
 
 2. **Build the project with Maven:**
